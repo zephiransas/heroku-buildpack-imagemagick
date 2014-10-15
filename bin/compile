@@ -53,6 +53,19 @@ cp -R $VENDORED_LIBPNG/lib/* $lib_path
 
 echo "Installation completed" | indent
 
+
+echo "Installing jpeg" | arrow
+VENDORED_JPEG="$(mktmpdir jpeg)"
+echo $VENDORED_JPEG
+package_download "jpeg9a.tar" "${VENDORED_JPEG}"
+
+echo "Download completed" | indent
+
+cp -R $VENDORED_JPEG/lib/* $lib_path
+
+echo "Installation completed" | indent
+
+
 echo "Installing imagemagick $IMAGE_MAGICK_VERSION" | arrow
 
 # vendor directories
