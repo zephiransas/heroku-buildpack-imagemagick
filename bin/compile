@@ -33,7 +33,7 @@ function package_download() {
   package="http://s3.amazonaws.com/${S3_BUCKET}/${remote}"
   echo $package
   echo $location
-  curl $package -s -o - | tar xzf - -C $location
+  curl $package -s -o - | tar xvf - -C $location
 }
 
 # we need this directory, it's our destination
